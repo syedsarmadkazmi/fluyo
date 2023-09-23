@@ -1,4 +1,4 @@
-![selected](https://github.com/syedsarmadkazmi/fluyo/assets/36984862/899df453-b1e6-4bc4-a800-0c853353bb54)# Fluyo React Native Code Assignment - Sarmad Kazmi
+# Fluyo React Native Code Assignment - Sarmad Kazmi
 
 This repository serves as a demonstration of my work on the **Fluyo** mobile app hiring test using **React Native Expo**. The assigned task was to create an application that enables users to practice exercises by guessing the correct translation from English to German.
 
