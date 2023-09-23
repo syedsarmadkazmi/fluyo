@@ -4,18 +4,26 @@ import { Row } from "../Base/Row"
 import { btnStyles } from "./elements"
 
 
-export const QOptions = () => {
+export const QOptions = ({
+	question,
+	selected,
+	onSelect
+}) => {
 
 	return (
 		<View style={btnStyles.container}>
 			<Row>
-				<ButtonPressable style={btnStyles.button} textStyles={btnStyles.text} title=" 1" />
-				<ButtonPressable style={btnStyles.button} textStyles={btnStyles.text} title="Option 2" />
-				<ButtonPressable style={btnStyles.button} textStyles={btnStyles.text} title="Option 3" />
-				<ButtonPressable style={btnStyles.button} textStyles={btnStyles.text} title="Option 4" />
+				{question?.options?.map((option) => {
+					if(selected?.id == option?.id) return <ButtonPressable  style={btnStyles.button} isDisabled title="" />
+					return <ButtonPressable
+						key={option?.id}
+						style={btnStyles.button}
+						textStyles={btnStyles.text}
+						title={option?.name}
+						onPress={() => onSelect(option)}
+					/>
+				})}
 			</Row>
 		</View>
 	)
 }
-
-

@@ -1,5 +1,5 @@
-import { Flex, Center } from "native-base"
-import { StyleSheet } from "react-native"
+import { Flex } from "native-base"
+import { StyleSheet, View } from "react-native"
 import { PressableItem } from "../PressableItem"
 import { THEME } from "~theme"
 import { ButtonPressableProps, EButtonVariant, EText } from "~types"
@@ -17,7 +17,11 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 	size,
 	variant = EButtonVariant.DEFAULT,
 	textStyles,
+	isDisabled
 }) => {
+
+	if(isDisabled) return <View style={[styles.buttonStyle, styles.disabledStyle, style]}></View>
+
 	return (
 		<Flex style={[
 			styles.buttonStyle, 
@@ -26,8 +30,8 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 			btnStyleByVariant[variant],
 			style
 		]}>
-			<PressableItem onPress={onPress}>
-				<Center style={styles.content}>
+			<PressableItem onPress={onPress} extraStyles={styles.touchable}>
+				<View style={styles.content}>
 					{leftIcon && leftIcon}
 					<Typography
 						style={[
@@ -37,22 +41,30 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 						kind={EText.MD_600}
 					>{title}</Typography>
 					{rightIcon && rightIcon}
-				</Center>
+				</View>
 			</PressableItem>
 		</Flex>
 	)
 }
 
 const styles = StyleSheet.create({
+	disabledStyle: {
+		height: 50,
+		backgroundColor: THEME.COLORS.gray,
+	},
 	buttonStyle: {
 		borderRadius: 50,
-		paddingVertical: 14,
 		marginBottom: 12,
 		minWidth: "30%",
+	},
+	touchable: {
+		paddingVertical: 14,
 	},
 	content: {
 		flexDirection: "row",
 		paddingHorizontal: 12,
+		justifyContent: "center",
+		alignItems: "center"
 	},
 	buttonText: {
 		color: THEME.COLORS.white,

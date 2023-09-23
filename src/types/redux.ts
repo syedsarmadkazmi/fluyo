@@ -1,4 +1,3 @@
-export interface IMovieState {
+export interface IQuizState {
 	list: [],
-	orientation: number,
 }

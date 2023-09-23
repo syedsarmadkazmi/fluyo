@@ -11,7 +11,6 @@ export const sizeStyles = StyleSheet.create({
 	},
 	[EButtonSize.LG]: {
 		width: "80%",
-		paddingVertical: 20,
 	},
 })
 

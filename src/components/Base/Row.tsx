@@ -3,11 +3,12 @@ import { Props } from "~types"
 
 
 export const Row:React.FC<Props> = ({
-	children
+	children,
+	style,
 }) => {
 
 	return (
-		<View style={styles.container}>
+		<View style={[styles.container, style]}>
 			{children}
 		</View>
 	)

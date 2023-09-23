@@ -3,22 +3,31 @@ import { EText } from "~types"
 import { StyleSheet, View } from "react-native"
 import { btnStyles } from "./elements"
 import { getPreSubString, getPostSubString } from "~services"
+import { CONSTANTS } from "~config"
 
-const blankKeyword = "[blank]"
+const blankKeyword = CONSTANTS.blankKeyword
 
 export const QStatement = ({
-	statement= "",
+	question,
+	selected,
+	onSelect
 }) => {
+
+	const text = question?.statement?.target?.text || ""
 
 	return (
 		<View style={styles.container}>
-			<Typography kind={EText.LG} style={styles.text}>{getPreSubString(statement, blankKeyword)}</Typography>
-			{true ?
+			<Typography kind={EText.LG} style={styles.text}>{getPreSubString(text, blankKeyword)}</Typography>
+			{!selected ?
 				<Typography kind={EText.LG} underline={true}>{Array(20).fill(0).map(() => <>&nbsp;</>)}</Typography>
 				:
-				<ButtonPressable style={[btnStyles.button, styles.selectedOption]} textStyles={btnStyles.text} title="Option 2" />
+				<ButtonPressable
+					style={[btnStyles.button, styles.selectedOption]}
+					textStyles={btnStyles.text} title={selected?.name}
+					onPress={() => onSelect(selected)}
+				/>
 			}
-			<Typography kind={EText.LG} style={styles.text}>{getPostSubString(statement, blankKeyword)}</Typography>
+			<Typography kind={EText.LG} style={styles.text}>{getPostSubString(text, blankKeyword)}</Typography>
 		</View>
 	)
 }

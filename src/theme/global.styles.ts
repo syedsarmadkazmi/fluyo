@@ -9,13 +9,7 @@ const general = StyleSheet.create({
 	},
 	container: {
 		flex: 1,
-		backgroundColor: "#74d4fd",
-	},
-	screen: {
-		flex: 1,
-		paddingHorizontal: 20,
-		paddingTop: 20,
-		backgroundColor: THEME.COLORS.grayLight,
+		backgroundColor: THEME.COLORS.primaryBlue,
 	},
 	touchable: {
 		padding: 10,
@@ -25,12 +19,11 @@ const general = StyleSheet.create({
 		justifyContent: "center",
 		alignItems: "center",
 	},
-	dummyScreen: {
-		flex: 1,
-		justifyContent: "center",
-		alignItems: "center",
-		backgroundColor: THEME.COLORS.grayLight
-	},
+	roundedView: {
+		borderTopLeftRadius: 30,
+		borderTopRightRadius: 30,
+		overflow: "hidden",
+	}
 })
 
 

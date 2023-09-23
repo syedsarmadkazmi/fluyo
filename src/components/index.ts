@@ -1,4 +1,3 @@
-export * from "./Cards"
 export * from "./Modals"
 export * from "./Containers"
 export * from "./Base"

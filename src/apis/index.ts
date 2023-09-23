@@ -1,7 +1,1 @@
-import { MOVIES } from "./movies"
-
-export const API = {
-	MOVIES: {
-		...MOVIES
-	}
-}
+export * from "./firebase.seed"

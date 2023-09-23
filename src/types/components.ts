@@ -1,48 +1,19 @@
 import { TextProps } from "react-native"
-import { ETheme } from "./general"
 
+/*  COMPONENT PROPS */
 export interface Props {
+	style?
 	children: React.ReactNode;
 }
 
+
+/* BASE COMPONENT PROPS */
 export interface SpaceProps {
 	size?: number;
 }
-  
 
-export interface SearchResultsCardProps {
-	id: string
-	title: string
-	imageURL: string
-	subTitle: React.ReactNode
-}
 
-export interface VideoModalProps {
-    title: string
-	visible: boolean
-	onClose: () => void
-	videoId: string
-}
-
-export interface NavHeaderProps {
-    onBackPress?: () => void
-	showBackButton?: boolean
-	title?: string
-	theme?: ETheme
-	custom?: React.ReactNode
-	customStyle?,
-}
-
-export interface TextInputProps {
-    onClear?: () => void
-	onFilter?: () => void
-    value?: string
-    isFilterOn?: boolean
-	onChangeText: (text) => void
-	placeholder?: string
-	onSubmitEditing?: () => void
-}
-
+/* BUTTON COMPONENT PROPS */
 export enum EButtonSize {
 	SM = "SM",
 	MD = "MD",
@@ -65,10 +36,13 @@ export interface ButtonPressableProps {
 	onPress?: (text) => void
 	size?: EButtonSize
 	variant?: EButtonVariant
+	isDisabled?: boolean
 	textStyles?,
 	style?,
 }
 
+
+/* TEXT COMPONENT PROPS */
 export enum EText {
 	SM = "SM",
 	SM_600 = "SM_600",
@@ -85,6 +59,23 @@ export interface TypographyProps extends TextProps {
 	underline?: boolean,
 }
 
+
+/* LOADER COMPONENT PROPS */
 export interface LoaderProps {
 	loading: boolean,
+}
+
+
+/* MODAL COMPONENT PROPS */
+export enum EModalType {
+	SUCCESS = "SUCCESS",
+	ERROR = "ERROR",
+}
+
+export interface BottomSheetProps {
+    title?: string | React.ReactNode
+	visible: boolean
+	onClose: () => void
+	onProceed?: () => void
+	type?: EModalType
 }
