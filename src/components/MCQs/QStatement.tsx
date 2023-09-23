@@ -1,5 +1,5 @@
 import { ButtonPressable, Typography } from "../Base"
-import { EText } from "~types"
+import { EButtonVariant, EText, IMCQProps } from "~types"
 import { StyleSheet, View } from "react-native"
 import { btnStyles } from "./elements"
 import { getPreSubString, getPostSubString } from "~services"
@@ -7,10 +7,11 @@ import { CONSTANTS } from "~config"
 
 const blankKeyword = CONSTANTS.blankKeyword
 
-export const QStatement = ({
+export const QStatement: React.FC<IMCQProps> = ({
 	question,
 	selected,
-	onSelect
+	onSelect,
+	isIncorrect = false,
 }) => {
 
 	const text = question?.statement?.target?.text || ""
@@ -25,6 +26,7 @@ export const QStatement = ({
 					style={[btnStyles.button, styles.selectedOption]}
 					textStyles={btnStyles.text} title={selected?.name}
 					onPress={() => onSelect(selected)}
+					variant={isIncorrect ? EButtonVariant.DANGER_FILLED : EButtonVariant.DEFAULT}
 				/>
 			}
 			<Typography kind={EText.LG} style={styles.text}>{getPostSubString(text, blankKeyword)}</Typography>

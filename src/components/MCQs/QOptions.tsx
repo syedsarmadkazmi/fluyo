@@ -2,9 +2,10 @@ import { ButtonPressable } from "../Base"
 import { View } from "react-native"
 import { Row } from "../Base/Row"
 import { btnStyles } from "./elements"
+import { IMCQProps } from "~types"
 
 
-export const QOptions = ({
+export const QOptions: React.FC<IMCQProps> = ({
 	question,
 	selected,
 	onSelect

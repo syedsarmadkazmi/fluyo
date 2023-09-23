@@ -5,8 +5,9 @@ import { store } from "~redux"
 import { AppContainer } from "~components"
 import { useFonts } from "expo-font"
 import * as SplashScreen from "expo-splash-screen"
-import { styles } from "src/screens/Watch/elements"
 import { View } from "react-native"
+import { RootSiblingParent } from "react-native-root-siblings"
+import { GStyles } from "~theme"
 
 SplashScreen.preventAutoHideAsync()
 export default function App() {
@@ -34,10 +35,12 @@ export default function App() {
 	}
 
 	return (
-		<View style={styles.container} onLayout={onLayoutRootView}>
+		<View style={GStyles.container} onLayout={onLayoutRootView}>
 			<NativeBaseProvider>
 				<Provider store={store}>
-					<AppContainer/>
+					<RootSiblingParent>
+						<AppContainer/>
+					</RootSiblingParent>
 				</Provider>
 			</NativeBaseProvider>
 		</View>

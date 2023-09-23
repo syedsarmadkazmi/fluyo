@@ -1,4 +1,5 @@
 import { TextProps } from "react-native"
+import { IQuestion, IQuestionOption } from "./general"
 
 /*  COMPONENT PROPS */
 export interface Props {
@@ -78,4 +79,13 @@ export interface BottomSheetProps {
 	onClose: () => void
 	onProceed?: () => void
 	type?: EModalType
+}
+
+
+/* CUSTOM COMPONENT PROPS */
+export interface IMCQProps {
+	question: IQuestion,
+	selected: IQuestionOption,
+	onSelect: (selected: IQuestionOption) => void
+	isIncorrect?: boolean
 }

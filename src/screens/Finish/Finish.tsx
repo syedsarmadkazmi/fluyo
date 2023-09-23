@@ -2,13 +2,13 @@ import { StyleSheet, View } from "react-native"
 import { ButtonPressable, Typography } from "~components"
 import { THEME } from "~theme"
 import { MaterialCommunityIcons } from "@expo/vector-icons"
-import { EButtonSize, EButtonVariant, EText } from "~types"
+import { EButtonSize, EButtonVariant, EText, IScreenProps } from "~types"
 import { Routes } from "src/navigation/MainStackNavigator"
 
 
-export function Finish({
+export const Finish: React.FC<IScreenProps> = ({
 	navigation
-}) {
+}) => {
 
 	const handleRestart = () => {
 		navigation.replace(Routes.Home)

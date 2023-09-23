@@ -4,26 +4,24 @@ import { BottomSheet, ButtonPressable, QOptions, QStatement, Space, Typography }
 import { CONSTANTS, collectionName, firebaseDB } from "~config"
 import { findObjectById, replaceJSX } from "~services"
 import { GStyles, THEME } from "~theme"
-import { EButtonSize, EButtonVariant, EModalType, EText } from "~types"
+import { EButtonSize, EButtonVariant, EModalType, EText, IQuestionOption, IQuestions, IScreenProps } from "~types"
 import { collection, onSnapshot, query, orderBy } from "firebase/firestore"
 import { Routes } from "src/navigation/MainStackNavigator"
-import { seedFirebaseDB } from "~apis"
+import Toast from "react-native-root-toast"
 
-export const Home = ({
+export const Home: React.FC<IScreenProps> = ({
 	navigation,
 	route,
 }) => {
 
 	/* state definations */
-	const [selectedOption, setSelectedOption] = useState(null)
-
-	const [dialogVisible, setDialogVisible] = useState(false)
-	const [questions, setQuestions] = useState(null)
-	const [correctAns, setCorrectAns] = useState(null)
-	const [currentStep, setCurrentStep] = useState(0)
+	const [questions, setQuestions] = useState<IQuestions>(null)
+	const [selectedOption, setSelectedOption] = useState<IQuestionOption>(null)
+	const [dialogVisible, setDialogVisible] = useState<boolean>(false)
+	const [correctAns, setCorrectAns] = useState<IQuestionOption>(null)
+	const [currentStep, setCurrentStep] = useState<number>(0)
 
 	useEffect(() => {
-		seedFirebaseDB()
 		const questionIndex = route?.params?.questionIndex || currentStep
 
 		const dbQuery = query(collection(firebaseDB, collectionName), orderBy("order"))
@@ -49,6 +47,16 @@ export const Home = ({
 	const question = questions?.[currentStep]
 
 
+	const handleContinue = () => {
+		Toast.show("Please select an option to proceed forward.", {
+			duration: Toast.durations.LONG,
+			position: Toast.positions.BOTTOM,
+			shadow: true,
+			animation: true,
+			hideOnPress: true,
+			delay: 0,
+		})
+	}
 	const handleSelect = (option) => {
 		if(selectedOption && option?.id == selectedOption?.id) setSelectedOption(null)
 		else
@@ -70,6 +78,12 @@ export const Home = ({
 	const isAnsValid = correctAns?.id == selectedOption?.id
 
 
+	const commonProps = {
+		question: question,
+		selected: selectedOption,
+		onSelect: handleSelect,
+	}
+
 	if(question)
 		return (
 			<View style={[GStyles.container, styles.container]}>
@@ -82,16 +96,16 @@ export const Home = ({
 					</Typography>
 				
 					<View style={styles.questionContainer}>
-						<QStatement question={question} selected={selectedOption} onSelect={handleSelect} />
+						<QStatement {...commonProps} isIncorrect={dialogVisible && !isAnsValid} />
 						<Space size={50} />
-						<QOptions question={question} selected={selectedOption} onSelect={handleSelect} />
+						<QOptions {...commonProps} />
 					</View>
 
 					<View style={styles.buttonsContainer}>
 						{selectedOption ?
 							<ButtonPressable size={EButtonSize.LG} variant={EButtonVariant.PRIMARY} title="CHECK ANSWER" onPress={validateAnswer} />
 							:
-							<ButtonPressable size={EButtonSize.LG} variant={EButtonVariant.SECONDARY} title="CONTINUE" />
+							<ButtonPressable size={EButtonSize.LG} variant={EButtonVariant.SECONDARY} title="CONTINUE" onPress={handleContinue} />
 						}
 					</View>
 				</View>

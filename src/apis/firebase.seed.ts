@@ -139,6 +139,40 @@ const questions = [
 			},
 		]
 	},
+	{
+		order: 5,
+		correct_ans_id: "3",
+		source_lang: "English",
+		target_lang: "German",
+		statement: {
+			source: {
+				text: "I'd like a [blank].",
+				replace_by: "room"
+			},
+			target: {
+				text: "Ich hätte gerne ein [blank].",
+				replace_by: ""
+			}
+		},
+		options: [
+			{
+				id: "1",
+				name: "Donnerstag"
+			},
+			{
+				id: "2",
+				name: "Warum"
+			},
+			{
+				id: "3",
+				name: "Zimmer"
+			},
+			{
+				id: "4",
+				name: "Sprechen"
+			},
+		]
+	},
 ]
 
 export const seedFirebaseDB = async () => {
