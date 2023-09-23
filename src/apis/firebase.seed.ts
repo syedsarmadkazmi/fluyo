@@ -1,8 +1,9 @@
 import { writeBatch, doc, collection, setDoc, getCountFromServer } from "firebase/firestore" 
 import { collectionName, firebaseDB } from "~config"
+import { IQuestions } from "~types"
 
 
-const questions = [
+const questions: IQuestions = [
 	{
 		order: 1,
 		correct_ans_id: "1",
