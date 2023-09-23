@@ -1,4 +1,3 @@
-import { Flex } from "native-base"
 import { StyleSheet, View } from "react-native"
 import { PressableItem } from "../PressableItem"
 import { THEME } from "~theme"
@@ -11,7 +10,6 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 	title, 
 	style,
 	onPress = () => null,
-	filled,
 	leftIcon,
 	rightIcon,
 	size,
@@ -23,9 +21,8 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 	if(isDisabled) return <View style={[styles.buttonStyle, styles.disabledStyle, style]}></View>
 
 	return (
-		<Flex style={[
+		<View style={[
 			styles.buttonStyle, 
-			filled && styles.filled,
 			size && sizeStyles[size],
 			btnStyleByVariant[variant],
 			style
@@ -43,7 +40,7 @@ export const ButtonPressable: React.FC<ButtonPressableProps> = ({
 					{rightIcon && rightIcon}
 				</View>
 			</PressableItem>
-		</Flex>
+		</View>
 	)
 }
 
@@ -72,7 +69,4 @@ const styles = StyleSheet.create({
 		fontSize: 14,
 		paddingHorizontal: 5,
 	},
-	filled: {
-		backgroundColor: THEME.COLORS.skyBlue
-	}
 })

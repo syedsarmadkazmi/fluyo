@@ -1,4 +1,5 @@
-import { Center, Spinner } from "native-base"
+import { View } from "react-native"
+import { GStyles } from "~theme"
 import { LoaderProps } from "~types"
 
 export const Loader: React.FC<LoaderProps> = ({ 
@@ -7,7 +8,6 @@ export const Loader: React.FC<LoaderProps> = ({
 
 	if(!loading) return null
 	
-	return <Center>
-		<Spinner/>
-	</Center>
+	return <View style={GStyles.center}>
+	</View>
 }

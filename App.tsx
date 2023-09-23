@@ -1,5 +1,4 @@
 import "react-native-gesture-handler"
-import { NativeBaseProvider } from "native-base"
 import { Provider } from "react-redux"
 import { store } from "~redux"
 import { AppContainer } from "~components"
@@ -36,13 +35,11 @@ export default function App() {
 
 	return (
 		<View style={GStyles.container} onLayout={onLayoutRootView}>
-			<NativeBaseProvider>
-				<Provider store={store}>
-					<RootSiblingParent>
-						<AppContainer/>
-					</RootSiblingParent>
-				</Provider>
-			</NativeBaseProvider>
+			<Provider store={store}>
+				<RootSiblingParent>
+					<AppContainer/>
+				</RootSiblingParent>
+			</Provider>
 		</View>
 	)
 }
