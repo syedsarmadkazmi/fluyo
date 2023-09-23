@@ -1,8 +1,16 @@
-# Fluyo React Native Code Assignment - Sarmad Kazmi
+![selected](https://github.com/syedsarmadkazmi/fluyo/assets/36984862/899df453-b1e6-4bc4-a800-0c853353bb54)# Fluyo React Native Code Assignment - Sarmad Kazmi
 
 This repository serves as a demonstration of my work on the **Fluyo** mobile app hiring test using **React Native Expo**. The assigned task was to create an application that enables users to practice exercises by guessing the correct translation from English to German.
 
 I have successfully fulfilled all the specified requirements and fine-tuned the user interface to achieve pixel-perfect precision, leveraging TypeScript for robust implementation. Additionally, I've crafted schemas within the Firebase Firestore database ([see schema types](https://github.com/syedsarmadkazmi/fluyo/blob/main/src/types/general.ts)), seamlessly integrating Firebase's subscription API to provide real-time updates on data.
+
+## Implementation Screenshots
+
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/75d8b2d7-c8c7-4351-8a33-e182b30cba53" alt="Unselected" style="width:200px;"/>
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/51a6b745-1456-4861-bd2b-ebe102e241c5" alt="Selected" style="width:200px;"/>
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/032cf768-7a76-4cf3-af2d-72d70c1127d7" alt="Correct Guess" style="width:200px;"/>
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/e6352916-0c7e-4ec8-ac64-dcc3b1c6015f" alt="Incorrect Guess" style="width:200px;"/>
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/997b5bb6-5d96-4a74-ae85-1ba88114622c" alt="Finish" style="width:200px;"/>
 
 
 ## Features and Implementation Details
