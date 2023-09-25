@@ -10,7 +10,7 @@ I have successfully fulfilled all the specified requirements and fine-tuned the 
 <img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/51a6b745-1456-4861-bd2b-ebe102e241c5" alt="Selected" style="width:200px;"/>
 <img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/032cf768-7a76-4cf3-af2d-72d70c1127d7" alt="Correct Guess" style="width:200px;"/>
 <img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/e6352916-0c7e-4ec8-ac64-dcc3b1c6015f" alt="Incorrect Guess" style="width:200px;"/>
-<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/997b5bb6-5d96-4a74-ae85-1ba88114622c" alt="Finish" style="width:200px;"/>
+<img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/80479d64-2e1e-48f1-8a5a-d54812a3b8f7" alt="Finish" style="width:200px;"/>
 
 
 ## Features and Implementation Details
