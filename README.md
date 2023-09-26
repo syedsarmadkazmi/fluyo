@@ -12,6 +12,10 @@ I have successfully fulfilled all the specified requirements and fine-tuned the 
 <img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/e6352916-0c7e-4ec8-ac64-dcc3b1c6015f" alt="Incorrect Guess" style="width:200px;"/>
 <img src="https://github.com/syedsarmadkazmi/fluyo/assets/36984862/80479d64-2e1e-48f1-8a5a-d54812a3b8f7" alt="Finish" style="width:200px;"/>
 
+## Firestore Real-time Updates
+
+https://github.com/syedsarmadkazmi/fluyo/assets/36984862/64c24980-8e99-4ae1-86d0-8229318bb5cb
+
 
 ## Features and Implementation Details
 
