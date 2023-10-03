@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "SarmadFluyo",
-    "slug": "SarmadFluyo",
+    "name": "SarmadLangMasters",
+    "slug": "SarmadLangMasters",
     "version": "1.0.0",
     "orientation": "default",
     "icon": "./assets/icon.png",
@@ -22,7 +22,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
-      "package": "com.syed_sarmad.SarmadFluyo"
+      "package": "com.syed_sarmad.SarmadLangMasters"
     },
     "web": {
       "favicon": "./assets/favicon.png"
