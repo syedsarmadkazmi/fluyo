@@ -1,8 +1,9 @@
-# Fluyo React Native Code Assignment - Sarmad Kazmi
+# LanguageMasters - Multilingual Learning App - Sarmad Kazmi
 
-This repository serves as a demonstration of my work on the **Fluyo** mobile app hiring test using **React Native Expo**. The assigned task was to create an application that enables users to practice exercises by guessing the correct translation from English to German.
+This repository showcases my proficiency in React Native Expo, Firebase, and TypeScript through a hobby project. The project involved creating a mobile application that allows users to practice exercises by guessing the correct translation from English to German.
 
-I have successfully fulfilled all the specified requirements and fine-tuned the user interface to achieve pixel-perfect precision, leveraging TypeScript for robust implementation. Additionally, I've crafted schemas within the Firebase Firestore database ([see schema types](https://github.com/syedsarmadkazmi/fluyo/blob/main/src/types/general.ts)), seamlessly integrating Firebase's subscription API to provide real-time updates on data.
+I have successfully implemented all the required features, paying close attention to achieving pixel-perfect precision in the user interface. TypeScript was chosen for its robustness, and Firebase Firestore was seamlessly integrated for database management ([see schema types](https://github.com/syedsarmadkazmi/fluyo/blob/main/src/types/general.ts)). Additionally, I harnessed Firebase's subscription API to provide real-time updates on data.
+
 
 ## Implementation Screenshots
 
