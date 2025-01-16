@@ -54,7 +54,7 @@ Before you can run this project, you need to have the following installed on you
 1. Clone this repository to your local machine:
 
 ```command
-git clone https://github.com/syedsarmadkazmi/fluyo.git
+git clone https://github.com/syedsarmadkazmi/language-masters.git
 ```
 2. Navigate to the project directory:
 
